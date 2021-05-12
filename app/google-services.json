@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "225687934578",
+    "project_id": "cde-quiz-app",
+    "storage_bucket": "cde-quiz-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225687934578:android:630f9b09bb06ae4f1394eb",
+        "android_client_info": {
+          "package_name": "com.example.cde_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "225687934578-sumjvofno5ddqv44s8nl8llgig8ksk9t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQQYgrQKUudNv46LQDsIGqNQRLPyejrRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "225687934578-sumjvofno5ddqv44s8nl8llgig8ksk9t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
