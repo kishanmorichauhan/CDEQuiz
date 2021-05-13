@@ -1,6 +1,7 @@
 package com.example.cde_app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.strictmode.WebViewMethodCalledOnWrongThreadViolation;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,7 +38,18 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         CategoryModel model = categoryModels.get(position);
 
         holder.textView.setText(model.getName());
-        Glide.with(context).load(model.getImage()).placeholder(R.drawable.quiz_icon).into(holder.imageView);
+        Glide.with(context)
+                .load(model.getImage()).placeholder(R.drawable.quiz_icon)
+                .into(holder.imageView);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,QuizActivity.class);
+                intent.putExtra("catId",model.getCategoryId());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
