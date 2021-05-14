@@ -48,8 +48,12 @@ public class QuizActivity extends AppCompatActivity {
         final String catId = getIntent().getStringExtra("catId");
 
         Random random = new Random();
+
+        // here 6 is the total question in firebase
         final int rand = random.nextInt(6);
 
+
+        // question fetch in the database
         database.collection("categories")
                 .document(catId)
                 .collection("questions")
@@ -58,6 +62,8 @@ public class QuizActivity extends AppCompatActivity {
                 .limit(5).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+
+                //here 5 is the total question show in quizActivity
                 if(queryDocumentSnapshots.getDocuments().size()<5){
                     database.collection("categories")
                             .document(catId)
@@ -88,6 +94,7 @@ public class QuizActivity extends AppCompatActivity {
 
     }
 
+    // timer reset in QuizActivity
     void resetTimer(){
         timer = new CountDownTimer(30000,1000) {
             @Override
@@ -104,6 +111,7 @@ public class QuizActivity extends AppCompatActivity {
 
 
 
+    // if answer right , set background green
     void showAnswer(){
         if(question.getAnswer().equals(binding.option1.getText().toString()))
             binding.option1.setBackground(getResources().getDrawable(R.drawable.option_right));
